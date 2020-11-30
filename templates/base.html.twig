@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="webthemez" name="author"/>
+    <title>{% block title %}Ges bibliothéque!{% endblock %}</title>
+    <!-- Bootstrap Styles-->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="{{ asset('css/custom-styles.css') }}" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+</head>
+<div id="wrapper">
+    {% include('top.html.twig') %}
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> Ges Bibliothéque</strong></a>
+        <div id="sideNav" href="">
+            <i class="fa fa-bars icon"></i>
+        </div>
+    </div>
+
+    </nav>
+    {% include('menu.html.twig') %}
+</div>
+
+    <div id="page-wrapper">
+        <div class="header">
+            <h1 class="page-header">
+                Empty Page <small>Create new page.</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Empty</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Advanced Tables
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                {% block body %}{% endblock %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include('piedpage.html.twig') %}
+</div>
+<body>
+
+
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="{{ asset('js/jquery-1.10.2.js') }}"></script>
+<!-- Bootstrap Js -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- Metis Menu Js -->
+<script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
+<!-- Custom Js -->
+<script src="{{ asset('js/custom-scripts.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>
