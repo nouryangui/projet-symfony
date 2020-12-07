@@ -1,7 +1,89 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{titre}}{% endblock %}
-
+{% block title %}{{ titre }}{% endblock %}
+{% block stylesheets %}
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">s
+{% endblock %}
 {% block body %}
+{% block mainbody %}
 
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="board">
+                    <div class="panel panel-primary">
+                        <div class="number">
+                            <h3>
+                                <h3>{{ nbcategories }}</h3>
+                                <small>Categories</small>
+                            </h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-eye fa-5x red"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="board">
+                    <div class="panel panel-primary">
+                        <div class="number">
+                            <h3>
+                                <h3>{{ nblivres }}</h3>
+                                <small>Livres</small>
+                            </h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-book fa-5x green"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="board">
+                    <div class="panel panel-primary">
+                        <div class="number">
+                            <h3>
+                                <h3>{{ nbauteurs }}</h3>
+                                <small>Auteurs</small>
+                            </h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-users fa-5x yellow"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="board">
+                    <div class="panel panel-primary">
+                        <div class="number">
+                            <h3>
+                                <h3>{{ nbediteurs }}</h3>
+                                <small>Editeurs</small>
+                            </h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-pencil fa-5x blue"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% endblock %}
+{% block javascripts %}
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+    <script src="assets/js/easypiechart.js"></script>
+    <script src="assets/js/easypiechart-data.js"></script>
+    <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+    <!-- Chart Js -->
+    <script type="text/javascript" src="assets/js/Chart.min.js"></script>
+    <script type="text/javascript" src="assets/js/chartjs.js"></script>
 {% endblock %}

@@ -125,8 +125,8 @@
     </div>
     <div id="page-inner">
         <div class=" row">
+            {% block mainbody %}
             <div class="col-md-12">
-                <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <td>Advanced tables</td>
@@ -138,6 +138,7 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     {% include('piedpage.html.twig') %}
 
 </div>
