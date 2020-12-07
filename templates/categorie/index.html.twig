@@ -1,18 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categorie{% endblock %}
+{% block title %}{{titre}}{% endblock %}
 
 {% block body %}
-    <h1>Categorie </h1>
-
+    <div>
+        <a href="{{ path('categorie_new') }}"><span class="btn btn-primary">Ajouter <i
+                        class="fa fa-plus"></i></span></a>
+    </div>
+    </br>
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Designation</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Designation</th>
+            <th>Description</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for c,categorie in categories %}
@@ -21,9 +24,12 @@
                 <td>{{ categorie.designation }}</td>
                 <td>{{ categorie.description }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">Afficher</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Editer</a>
-                    <a href="{{ path('categorie_delete', {'id': categorie.id}) }}">Supprimer</a>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}"><span class="btn btn-default"><i
+                                    class="fa fa-eye"></i> </span></a>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"><span class="btn btn-success"><i
+                                    class="fa fa-pencil"></i> </span></a>
+                    <a href="{{ path('categorie_delete', {'id': categorie.id}) }}"><span class="btn btn-danger"><i
+                                    class="fa fa-trash-o"></i></span></a>
 
                 </td>
             </tr>
@@ -35,5 +41,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_new') }}">Nouvelle catégorie</a>
 {% endblock %}

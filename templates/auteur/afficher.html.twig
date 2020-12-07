@@ -1,13 +1,27 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <tbody>
-    <p>
-        <b>Prénom:</b>{{ auteur.prenom }}</br>
-        <b>Nom:</b>{{ auteur.nom }}<br>
-        <b>Biographie:</b>{{ auteur.biographie }}<br>
-    <hr>
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
+                {{ auteur.prenom }}</br>
+            </div>
+            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
+                {{ auteur.nom }}<br>
+            </div>
+            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
+                {{ auteur.biographie }}<br>
+            </div>
+            <tr>
+                <th>Livres</th>
+                <td>{% for livre in auteur.livres %}
+                        {{ livre.titre }}
+                    {% endfor %}
+                </td>
+            </tr>
+        </div>
+    </div>
     <a href="{{ path('index_auteur') }}">Retour</a>
-    </p>
+
     </tbody>
 {% endblock %}

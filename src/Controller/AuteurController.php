@@ -7,6 +7,7 @@ use App\Form\AuteurType;
 use App\Repository\AuteurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,6 +24,9 @@ class AuteurController extends AbstractController
         $rep = $this->getDoctrine()->getRepository(Auteur::class);
         $auteurs = $rep->findAll();
         return $this->render('auteur/index.html.twig', [
+            'titre' => 'Auteurs',
+            'soustitre' => '',
+            'lien' => $this->generateUrl('index_auteur'),
             'auteurs' => $auteurs,
         ]);
     }
@@ -43,7 +47,9 @@ class AuteurController extends AbstractController
             return $this->redirectToRoute('nouvel_auteur');
 
         }
-        return $this->render('auteur/nouveau.html.twig', ['formulaire' => $frm->createView()]);
+        return $this->render('auteur/nouveau.html.twig', ['formulaire' => $frm->createView(), 'titre' => 'auteur',
+            'soustitre' => 'details',
+            'lien' => $this->generateUrl('index_auteur'),]);
     }
 
     /**
@@ -54,7 +60,12 @@ class AuteurController extends AbstractController
 
         $rep = $this->getDoctrine()->getRepository(Auteur::class);
         $auteur = $rep->findOneBy(['id' => $id]);
-        return $this->render('auteur/afficher.html.twig', ['auteur' => $auteur]);
+        return $this->render('auteur/afficher.html.twig',
+            ['titre' => 'auteur',
+                'soustitre' => 'details',
+                'lien' => $this->generateUrl('index_auteur'),
+
+                'auteur' => $auteur]);
     }
 
     /**
@@ -77,7 +88,9 @@ class AuteurController extends AbstractController
             }
 
 
-            return $this->render('auteur/edit.html.twig', ['frm' => $frm->createView()]);
+            return $this->render('auteur/edit.html.twig', ['frm' => $frm->createView(), 'lien' => $this->generateUrl('index_auteur'), 'titre' => 'Auteurs',
+                'soustitre' => 'Editer'
+            ]);
         }
 
     }
@@ -85,7 +98,7 @@ class AuteurController extends AbstractController
     /**
      * @Route("/supprimer/{id}", name="supprimer_auteur")
      */
-    public function supprimer(int $id=-1)
+    public function supprimer(int $id = -1)
     {
         if ($id <= 0) {
             return $this->redirectToRoute('index_auteur');

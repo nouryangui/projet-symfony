@@ -25,49 +25,125 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> Ges Bibliothéque</strong></a>
-        <div id="sideNav" href="">
-            <i class="fa fa-bars icon"></i>
-        </div>
+
+        <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> Bibliothéque</strong></a>
+
     </div>
 
+
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                    <a href="#">
+                        <div>
+                            <i class="fa fa-comment fa-fw"></i> New Comment
+                            <span class="pull-right text-muted small">4 min</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                            <span class="pull-right text-muted small">12 min</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <i class="fa fa-envelope fa-fw"></i> Message Sent
+                            <span class="pull-right text-muted small">4 min</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <i class="fa fa-tasks fa-fw"></i> New Task
+                            <span class="pull-right text-muted small">4 min</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                            <span class="pull-right text-muted small">4 min</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a class="text-center" href="#">
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.dropdown-alerts -->
+        </li>
+    </ul>
+    <!-- /.dropdown -->
     </nav>
     {% include('menu.html.twig') %}
 </div>
 
-    <div id="page-wrapper">
-        <div class="header">
-            <h1 class="page-header">
-                Empty Page <small>Create new page.</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Empty</a></li>
-                <li class="active">Data</li>
-            </ol>
-        </div>
-        <div class="row">
+<div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            Empty Page <small>Create new page.</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('accueil') }}"><i class="fa fa-home"></i>Accueil</a></li>
+            <li><a href="{{ lien }}">{{ titre }}</a></li>
+            <li class="active">{% if soustitre!=" " %} {{ soustitre }}{% endif %}</li>
+        </ol>
+    </div>
+    <div id="page-inner">
+        <div class=" row">
             <div class="col-md-12">
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Advanced Tables
+                        <td>Advanced tables</td>
                     </div>
                     <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                {% block body %}{% endblock %}
-                            </table>
-                        </div>
+                        {% block body %}{% endblock %}
                     </div>
                 </div>
             </div>
         </div>
-        {% include('piedpage.html.twig') %}
-</div>
-<body>
+    </div>
+    {% include('piedpage.html.twig') %}
 
+</div>
+</div>
+
+<body>
 
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -79,6 +155,7 @@
 <script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
 <!-- Custom Js -->
 <script src="{{ asset('js/custom-scripts.js') }}"></script>
+<!-- Metis Menu Js -->
 {% block javascripts %}{% endblock %}
 </body>
 </html>

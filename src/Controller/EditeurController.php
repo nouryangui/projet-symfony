@@ -21,6 +21,9 @@ class EditeurController extends AbstractController
     public function index(EditeurRepository $editeurRepository): Response
     {
         return $this->render('editeur/index.html.twig', [
+            'titre'=>'Editeurs',
+            'soustitre'=>'',
+            'lien'=>$this->generateUrl('editeur_index'),
             'editeurs' => $editeurRepository->findAll(),
         ]);
     }
@@ -44,6 +47,10 @@ class EditeurController extends AbstractController
 
         return $this->render('editeur/new.html.twig', [
             'editeur' => $editeur,
+            'lien' => $this->generateUrl('editeur_index'),
+            'titre' => 'Editeurs',
+            'soustitre' => 'Ajouter',
+            'form' => $form->createView(),
             'form' => $form->createView(),
         ]);
     }
@@ -55,6 +62,9 @@ class EditeurController extends AbstractController
     {
         return $this->render('editeur/show.html.twig', [
             'editeur' => $editeur,
+            'titre'=>'Editeurs',
+            'lien'=>$this->generateUrl('editeur_index'),
+            'soustitre'=>'Details',
         ]);
     }
 
@@ -74,6 +84,8 @@ class EditeurController extends AbstractController
 
         return $this->render('editeur/edit.html.twig', [
             'editeur' => $editeur,
+            'lien' => $this->generateUrl('editeur_index'), 'titre' => 'Auteurs',
+            'soustitre' => 'Editer',
             'form' => $form->createView(),
         ]);
     }

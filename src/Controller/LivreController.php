@@ -21,6 +21,9 @@ class LivreController extends AbstractController
     public function index(LivreRepository $livreRepository): Response
     {
         return $this->render('livre/index.html.twig', [
+            'titre'=>'Livres',
+            'lien'=>$this->generateUrl('livre_index'),
+            'soustitre'=>'',
             'livres' => $livreRepository->findAll(),
         ]);
     }
@@ -45,6 +48,9 @@ class LivreController extends AbstractController
         return $this->render('livre/new.html.twig', [
             'livre' => $livre,
             'form' => $form->createView(),
+            'titre'=>'Livres',
+            'soustitre'=>'Details',
+            'lien'=>$this->generateUrl('livre_index'),
         ]);
     }
 
@@ -55,6 +61,9 @@ class LivreController extends AbstractController
     {
         return $this->render('livre/show.html.twig', [
             'livre' => $livre,
+            'titre'=>'Livres',
+            'soustitre'=>'Details',
+            'lien'=>$this->generateUrl('livre_index'),
         ]);
     }
 
@@ -73,8 +82,10 @@ class LivreController extends AbstractController
         }
 
         return $this->render('livre/edit.html.twig', [
-            'livre' => $livre,
+
             'form' => $form->createView(),
+            'lien' => $this->generateUrl('index_auteur'), 'titre' => 'Livres',
+            'soustitre' => 'Editer'
         ]);
     }
 

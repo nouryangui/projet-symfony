@@ -21,6 +21,9 @@ class CategorieController extends AbstractController
     public function index(CategorieRepository $categorieRepository): Response
     {
         return $this->render('categorie/index.html.twig', [
+            'titre'=>'Catégories',
+            'soustitre' => '',
+            'lien'=>$this->generateUrl('categorie_index'),
             'categories' => $categorieRepository->findAll(),
         ]);
     }
@@ -44,7 +47,8 @@ class CategorieController extends AbstractController
 
         return $this->render('categorie/new.html.twig', [
             'categorie' => $categorie,
-            'form' => $form->createView(),
+            'form' => $form->createView(),'lien' => $this->generateUrl('categorie_new'), 'titre' => 'Categories',
+            'soustitre' => 'Ajouter',
         ]);
     }
 
@@ -55,6 +59,9 @@ class CategorieController extends AbstractController
     {
         return $this->render('categorie/show.html.twig', [
             'categorie' => $categorie,
+            'titre'=>'catégorie',
+            'soustitre'=>'details',
+            'lien'=>$this->generateUrl('categorie_index'),
         ]);
     }
 
@@ -74,6 +81,8 @@ class CategorieController extends AbstractController
 
         return $this->render('categorie/edit.html.twig', [
             'categorie' => $categorie,
+            'lien' => $this->generateUrl('index_categorie'), 'titre' => 'Categories',
+            'soustitre' => 'Editer',
             'form' => $form->createView(),
         ]);
     }
