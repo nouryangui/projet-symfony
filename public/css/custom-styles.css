@@ -727,7 +727,7 @@ ul.nav.nav-second-level.collapse.in {
 
     outline: 0;
 
-    background: red;
+    background:grey;
 
 }
 
@@ -746,7 +746,7 @@ ul.nav.nav-second-level.collapse.in {
 }
 
 .navbar-side .nav.ul.li :active {
-    background-color: red;
+    background-color: grey;
 }
 
 .top-navbar .navbar-brand:hover {

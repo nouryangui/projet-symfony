@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Categorie;
+use App\Entity\Livre;
 use App\Form\CategorieType;
 use App\Repository\CategorieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,9 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
- * @Route("/categorie")
+ * @Route("/admin/categorie")
  */
+
 class CategorieController extends AbstractController
 {
     /**
@@ -81,23 +84,28 @@ class CategorieController extends AbstractController
 
         return $this->render('categorie/edit.html.twig', [
             'categorie' => $categorie,
-            'lien' => $this->generateUrl('index_categorie'), 'titre' => 'Categories',
+            'lien' => $this->generateUrl('categorie_index'), 'titre' => 'Categories',
             'soustitre' => 'Editer',
             'form' => $form->createView(),
         ]);
     }
 
+
     /**
-     * @Route("/{id}", name="categorie_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="categorie_delete")
      */
-    public function delete(Request $request, Categorie $categorie): Response
+    public function delete(Request $request, int $id = -1): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$categorie->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($categorie);
-            $entityManager->flush();
+        if ($id <= 0) {
+            return $this->redirectToRoute('categorie_index');
+        } else {
+            $rep = $this->getDoctrine()->getRepository(Categorie::class);
+            $categroire = $rep->findOneBy(['id' => $id]);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove(     $categroire );
+            $em->flush();
+            return $this->redirectToRoute('categorie_index');
         }
 
-        return $this->redirectToRoute('categorie_index');
     }
 }

@@ -11,9 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
- * @Route("/auteur")
+ * @Route("/admin/auteur")
  */
+
 class AuteurController extends AbstractController
 {
     /**
@@ -44,11 +46,11 @@ class AuteurController extends AbstractController
         if ($frm->isSubmitted() && $frm->isValid()) {
             $em->persist($auteur);
             $em->flush();
-            return $this->redirectToRoute('nouvel_auteur');
+            return $this->redirectToRoute('index_auteur');
 
         }
         return $this->render('auteur/nouveau.html.twig', ['formulaire' => $frm->createView(), 'titre' => 'auteur',
-            'soustitre' => 'details',
+            'soustitre' => 'ajouter',
             'lien' => $this->generateUrl('index_auteur'),]);
     }
 

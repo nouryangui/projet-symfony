@@ -5,6 +5,6 @@
 {% block body %}
 
     {{ include('editeur/_form.html.twig') }}
+    <a href="{{ path('editeur_index') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
 
-    <a href="{{ path('editeur_index') }}">back to list</a>
 {% endblock %}

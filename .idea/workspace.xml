@@ -2,17 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ec30f0-c158-48ff-abd4-3aa14ffb5108" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gestionBibliotheque.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gestionBibliotheque.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuteurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EditeurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EditeurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LivreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LivreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Livre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LivreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LivreType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auteur/afficher.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auteur/afficher.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auteur/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auteur/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auteur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auteur/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +230,11 @@
       <workItem from="1607294762022" duration="1261000" />
       <workItem from="1607324768129" duration="4832000" />
       <workItem from="1607346597479" duration="7092000" />
-      <workItem from="1607372296361" duration="7398000" />
+      <workItem from="1607372296361" duration="9180000" />
+      <workItem from="1607465338760" duration="6138000" />
+      <workItem from="1607516007512" duration="1880000" />
+      <workItem from="1607554660235" duration="2634000" />
+      <workItem from="1607694780327" duration="6975000" />
     </task>
     <servers />
   </component>

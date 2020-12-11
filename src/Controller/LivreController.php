@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Auteur;
 use App\Entity\Livre;
 use App\Form\LivreType;
 use App\Repository\LivreRepository;
@@ -10,9 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+
 /**
- * @Route("/livre")
+ * @Route("/admin/livre")
  */
+
 class LivreController extends AbstractController
 {
     /**
@@ -38,6 +42,10 @@ class LivreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file =  $livre->getPhoto();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('photos_directory'), $fileName);
+            $livre->setPhoto($fileName);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($livre);
             $entityManager->flush();
@@ -90,16 +98,20 @@ class LivreController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="livre_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="livre_delete")
      */
-    public function delete(Request $request, Livre $livre): Response
+    public function delete(Request $request, int $id = -1): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$livre->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($livre);
-            $entityManager->flush();
+        if ($id <= 0) {
+            return $this->redirectToRoute('index_livre');
+        } else {
+            $rep = $this->getDoctrine()->getRepository(Livre::class);
+            $livre = $rep->findOneBy(['id' => $id]);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove(   $livre );
+            $em->flush();
+            return $this->redirectToRoute('livre_index');
         }
 
-        return $this->redirectToRoute('livre_index');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Editeur;
 use App\Form\EditeurType;
 use App\Repository\EditeurRepository;
@@ -10,9 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("/editeur")
  */
+
 class EditeurController extends AbstractController
 {
     /**
@@ -90,17 +93,22 @@ class EditeurController extends AbstractController
         ]);
     }
 
+
     /**
-     * @Route("/{id}", name="editeur_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="editeur_delete")
      */
-    public function delete(Request $request, Editeur $editeur): Response
+    public function delete(Request $request, int $id = -1): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$editeur->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($editeur);
-            $entityManager->flush();
+        if ($id <= 0) {
+            return $this->redirectToRoute('editeur_index');
+        } else {
+            $rep = $this->getDoctrine()->getRepository(Editeur::class);
+            $editeur = $rep->findOneBy(['id' => $id]);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove( $editeur);
+            $em->flush();
+            return $this->redirectToRoute('editeur_index');
         }
 
-        return $this->redirectToRoute('editeur_index');
     }
 }

@@ -29,8 +29,15 @@
                                     class="fa fa-eye"></i> </span></a>
                     <a href="{{ path('edit_auteur',{'id':auteur.id}) }}"><span class="btn btn-success"><i
                                     class="fa fa-pencil"></i> </span></a>
-                    <a href="{{ path('supprimer_auteur',{'id':auteur.id}) }}"><span class="btn btn-danger"><i
-                                    class="fa fa-trash-o"></i></span></a></td>
+
+                <form method="post" action="{{ path('supprimer_auteur', {'id': auteur.id}) }}"
+                      onsubmit="return confirm('Are you sure you want to delete this item?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ auteur.id) }}">
+                    <button class="btn"><span class="btn btn-danger"><i
+                                    class="fa fa-trash-o"></i></span></button>
+
+                </form>
             </tr>
         {% endfor %}
         </tbody>

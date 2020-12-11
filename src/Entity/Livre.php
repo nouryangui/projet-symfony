@@ -6,6 +6,7 @@ use App\Repository\LivreRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=LivreRepository::class)
@@ -69,7 +70,11 @@ class Livre
      * @ORM\OneToMany(targetEntity=Emprunter::class, mappedBy="livre")
      */
     private $emprunt;
-
+    /**
+     * @Assert\NotBlank(message="Please, upload the photo.")
+     * @Assert\File(mimeTypes={ "image/png", "image/jpeg" })
+     */
+    private $photo;
 
     public function __construct()
     {
@@ -78,7 +83,6 @@ class Livre
         $this->auteurs = new ArrayCollection();
 
     }
-
 
 
     public function getId(): ?int
@@ -235,6 +239,18 @@ class Livre
 
         return $this;
     }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+        return $this;
+    }
+
     public function __toString()
     {
         return $this->getTitre();
