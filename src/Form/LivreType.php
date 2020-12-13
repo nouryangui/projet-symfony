@@ -23,7 +23,7 @@ class LivreType extends AbstractType
             ->add('nombreExamplaires')
             ->add('prix')
             ->add('isbn')
-            ->add('photo', FileType::class, array('label' => 'Photo (png, jpeg)'))
+            ->add('imageFile', FileType::class, ['required'=>false])
             ->add('editeur')
             ->add('categorie')
             ->add('auteurs', EntityType::class, [

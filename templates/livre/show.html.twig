@@ -35,6 +35,10 @@
             <td>{{ livre.isbn }}</td>
         </tr>
         <tr>
+            <th>Image</th>
+            <td><img  src="{{ vich_uploader_asset(livre,'imageFile') }}" ></td>
+        </tr>
+        <tr>
             <th>Editeur</th>
             <td>{{ livre.editeur.nom }}</td>
         </tr>

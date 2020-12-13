@@ -19,7 +19,6 @@
             <th>Prix</th>
             <th>Isbn</th>
             <th>Editeur</th>
-            <th>Image</th>
             <th>actions</th>
         </tr>
         </thead>
@@ -34,7 +33,6 @@
                 <td>{{ livre.prix }}</td>
                 <td>{{ livre.isbn }}</td>
                 <td>{{ livre.editeur }}</td>
-                <td>{{ livre.photo }}</td>
                 <td>
                     <a href="{{ path('livre_show', {'id': livre.id}) }}"><span class="btn btn-default"><i
                                     class="fa fa-eye"></i> </span></a>

@@ -47,4 +47,15 @@ class LivreRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findByCategories($nomCategorie)
+    {
+
+        return $this->createQueryBuilder('l')
+            ->leftJoin('l.categorie','c')
+            ->addSelect('c')
+            ->WHERE('c.designation = :designationCategorie')
+            ->setParameter('designationCategorie', $nomCategorie)
+            ->getQuery()
+            ->execute();
+    }
 }
