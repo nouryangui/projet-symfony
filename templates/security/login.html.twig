@@ -1,16 +1,11 @@
 
-{% block title %}Log in!{% endblock %}
 
 {% block body %}
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+
 {% endblock %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -62,11 +57,9 @@
 
                 </div>
 
-
                 </div>
 
             </div>
-        </div>
     </section>
 </div>
 </body>

@@ -2,35 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ec30f0-c158-48ff-abd4-3aa14ffb5108" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/front/assets/img/bibliothèque.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/assets/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/assets/img/header-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accueil_front/categorie.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/masthead.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gestionBibliotheque.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gestionBibliotheque.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/custom-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/3c39b7e5bc0ed9767e8c6417b480d8c6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/5da2b7431d35078ad68d67b34dec8e5a.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/feb7f3b457f4ea780f61ab533c3bb4f2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LivreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LivreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Livre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LivreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LivreType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CategorieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategorieRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LivreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LivreRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editeur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilFrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LivrefrontController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil_front/categorie.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil_front/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil_front/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livrefront/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +219,7 @@
       <workItem from="1607554660235" duration="2634000" />
       <workItem from="1607694780327" duration="23254000" />
       <workItem from="1607812674068" duration="132000" />
-      <workItem from="1607849901234" duration="8232000" />
+      <workItem from="1607849901234" duration="21686000" />
     </task>
     <servers />
   </component>

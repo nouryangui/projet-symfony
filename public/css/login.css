@@ -4,12 +4,13 @@
     font-family: 'Raleway', sans-serif;
 }
 /* CSS reset */
+/* CSS reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
     margin:0;
     padding:0;
 }
 html,body {
-    margin:0;
+    margin-top:70px;
     padding:0;
     height: 100%;
 }
@@ -155,12 +156,7 @@ a{
     box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
 }
 
-/* remove codrops styles and reset the whole thing */
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-body{background:url(http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg);
-    background-attachment:fixed;
-    background-size:cover;
-}
+
 #container_demo{
     text-align: left;
     margin: 0;

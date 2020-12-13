@@ -4,6 +4,7 @@ namespace App\Controller;
 
 
 use App\Entity\Categorie;
+use App\Entity\Livre;
 use App\Repository\CategorieRepository;
 use App\Repository\LivreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,6 +24,7 @@ class AccueilFrontController extends AbstractController
             'categories' => $categorieRepository->findAll(),
             'livres' => $livres]);
     }
+
 
 
 }

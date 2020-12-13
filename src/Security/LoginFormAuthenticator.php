@@ -53,10 +53,12 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
             'csrf_token' => $request->request->get('_csrf_token'),
+            'roles' => $request->request->get('roles')
         ];
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $credentials['email']
+            $credentials['email'],
+            $credentials['roles']
         );
 
         return $credentials;
@@ -79,6 +81,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
         return $user;
     }
+
 //vérifier que le mot de passe est correcte.
     public function checkCredentials($credentials, UserInterface $user)
     {
@@ -95,13 +98,36 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
     {
+
+        $admin = false;
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
-            // echo "succes";
+            echo "succes";
             return new RedirectResponse($targetPath);
         }
+        $i = 0;
+        $roles = $token->getUser()->getRoles();
+        for($i=0;$i<count($roles);$i++)
+        {
+            if ($roles[$i] == 'ROLE_ADMIN') {
 
-        return new RedirectResponse($this->urlGenerator->generate('accueil'));
-        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+                $admin = true;
+
+
+            }
+        }
+
+
+        if ( $admin == true) {
+            return new RedirectResponse($this->urlGenerator->generate('admin_accueil'));
+        }
+        else
+        {
+            return new RedirectResponse($this->urlGenerator->generate('accueil'));
+
+        }
+
+
+
     }
 
     protected function getLoginUrl()

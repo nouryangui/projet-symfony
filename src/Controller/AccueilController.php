@@ -17,7 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/accueil", name="admin_accueil")
      */
     public function index(): Response
     {
