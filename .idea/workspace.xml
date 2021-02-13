@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ec30f0-c158-48ff-abd4-3aa14ffb5108" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210213083511.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210213102047.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210213123159.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210213124421.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210213133043.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DetailempruntController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/detailemprunt/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EmprunterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmprunterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EmprunterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmprunterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emprunter/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emprunter/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LivreFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LivreFrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre_front/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre_front/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +158,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Nouveau dossier/Chaima-Emna-Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
@@ -225,7 +229,9 @@
       <workItem from="1609535705829" duration="238000" />
       <workItem from="1609539542592" duration="1589000" />
       <workItem from="1612804356085" duration="161000" />
-      <workItem from="1613203673331" duration="10694000" />
+      <workItem from="1613203673331" duration="15325000" />
+      <workItem from="1613219143880" duration="7568000" />
+      <workItem from="1613241754581" duration="735000" />
     </task>
     <servers />
   </component>

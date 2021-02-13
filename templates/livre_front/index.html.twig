@@ -41,7 +41,7 @@
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{ livre.titre }}</div>
                             {% if app.user.email is defined %}
-                            <a href="{{ path('emprunter_new', {'id': livre.id,'abonne':app.user.id}) }}"><span class="btn btn-primary">Ajouter au panier <i
+                            <a href="{{ path('livre', {'id': livre.id,'abonne':app.user.id}) }}"><span class="btn btn-primary">Ajouter au panier <i
                                             class="fa fa-plus"></i></span></a>
                             {% endif %}
                             {% if app.user.email is not  defined %}
@@ -56,6 +56,7 @@
             {% endfor %}
         </div>
 </section>
+
 <!-- About-->
 {% include 'about.html.twig' %}
 

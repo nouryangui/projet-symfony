@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Bibliothéque</title>
+    <link href="{{ asset('front/assets/img/favicon.ico') }}" rel="icon" type="image/x-icon"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet"/>
+
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet"/>
+
+</head>
+<body id="page-top">
+<!-- Navigation-->
+{% include 'navigation.html.twig' %}
+<!-- Masthead-->
+{% include 'masthead.html.twig' %}
+
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <thead>
+    <tr>
+
+        <th>Nom Livre</th>
+        <th>Categorie Livre</th>
+
+        <th>Date Début</th>
+
+        <th>Date retour</th>
+        <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+{% for emp in emprunts  %}
+
+    <td>{{ emp.livre.titre}}</td>
+        <td>{{ emp.livre.categorie}}</td>
+    <td> {{emp.dateDebut ? emp.dateDebut|date('d-m-Y') : ''}}</td>
+        <td> {{emp.dateFin ? emp.dateFin|date('d-m-Y') : ''}}</td>
+        <td>
+
+
+            <form method="post" action="{{ path('emprunt_delete', {'id': emp.id,'abonne':app.user.id}) }}"
+                  onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ emp.id) }}">
+                <button class="btn"><span class="btn btn-danger">Delete</span></button>
+
+            </form>
+        </td>
+    </tr>
+    {% else %}
+        <tr>
+            <td colspan="6" style="color:red">pas d'emprunts trouvé</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    {% include 'about.html.twig' %}
+
+
+<!-- Footer-->
+{% include 'footer.html.twig' %}
+
+
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Contact form JS-->
+<script src="{{ asset('front/assets/mail/jqBootstrapValidation.j') }}"></script>
+
+<script src="{{ asset('front/assets/mail/contact_me.js') }}"></script>
+
+<!-- Core theme JS-->
+<script src="{{ asset('front/js/scripts.js') }}"></script>
+</body>
+</html>

@@ -20,54 +20,8 @@ class EmprunterController extends AbstractController
 {
 
 
-    /**
-     * @Route("/new/{id}/{abonne}", name="emprunter_new")
-     */
-    public function new(Request $request, $id=-1,$abonne=-1): Response
-    {$verifier = true;
-        $rep = $this->getDoctrine()->getRepository(Livre::class);
-        $livre = $rep->findOneById($id);
-        $rep1 = $this->getDoctrine()->getRepository(User::class);
-        $user = $rep1->findOneById($abonne);
-        $emprunt = new Emprunter();
-        $emprunt->setLivre($livre);
-        $emprunt->setUser($user);
-        $emprunt->setDateDebut(new \DateTime('now'));
-        $datefin = new \DateTime('now');
-        $datefin ->add(new DateInterval('P15D'));
-        $emprunt->setDateFin($datefin);
-
-        $form = $this->createForm(EmprunterType::class, $emprunt);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            if ($livre->getNombreExamplaires() == 1) {
-                $this->addFlash(
-                    'notice',
-                  'le nombre exemplaires du livre: '. $livre->getTitre().' egale à 1'
-                );
-            }
-            else{
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($emprunt);
-                $livre->setNombreExamplaires($livre->getNombreExamplaires()-1);
-
-                $entityManager->flush();
-
-                return $this->redirectToRoute('accueil');
-            }
 
 
-        }
-
-        return $this->render('emprunter/nouveau.html.twig', [
-
-            'form' => $form->createView(),
-            'titre' => 'Livres',
-            'soustitre' => 'Details',
-            'lien' => $this->generateUrl('emprunter_new'),
-        ]);
-    }
     /**
      * @Route("/admin/emprunter", name="emprunt_index", methods={"GET"})
      */

@@ -25,6 +25,9 @@
                             {% if app.user.email is defined %}
                             <li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                             {% endif%}
+                            {% if app.user.email is defined %}
+                                <li><a href="{{ path('detailemprunt', {'abonne':app.user.id}) }}"><i class="fa fa-sign-out fa-fw"></i> Detail</a></li>
+                            {% endif%}
                             {% if app.user.email is not  defined %}
                             <li><a href="{{ path('app_login') }}"><i class="fa fa-user fa-fw "></i> Login</a></li>
                             {% endif%}
