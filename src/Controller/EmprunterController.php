@@ -8,13 +8,14 @@ use App\Entity\User;
 use App\Repository\CategorieRepository;
 use App\Repository\EmprunterRepository;
 use App\Repository\UserRepository;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\EmprunterType;
-
-
+use DateInterval;
+use DateTime;
 class EmprunterController extends AbstractController
 {
 
@@ -23,7 +24,7 @@ class EmprunterController extends AbstractController
      * @Route("/new/{id}/{abonne}", name="emprunter_new")
      */
     public function new(Request $request, $id=-1,$abonne=-1): Response
-    {
+    {$verifier = true;
         $rep = $this->getDoctrine()->getRepository(Livre::class);
         $livre = $rep->findOneById($id);
         $rep1 = $this->getDoctrine()->getRepository(User::class);
@@ -31,16 +32,32 @@ class EmprunterController extends AbstractController
         $emprunt = new Emprunter();
         $emprunt->setLivre($livre);
         $emprunt->setUser($user);
+        $emprunt->setDateDebut(new \DateTime('now'));
+        $datefin = new \DateTime('now');
+        $datefin ->add(new DateInterval('P15D'));
+        $emprunt->setDateFin($datefin);
 
         $form = $this->createForm(EmprunterType::class, $emprunt);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($emprunt);
-            $entityManager->flush();
+            if ($livre->getNombreExamplaires() == 1) {
+                $this->addFlash(
+                    'notice',
+                  'le nombre exemplaires du livre: '. $livre->getTitre().' egale à 1'
+                );
+            }
+            else{
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($emprunt);
+                $livre->setNombreExamplaires($livre->getNombreExamplaires()-1);
 
-            return $this->redirectToRoute('accueil');
+                $entityManager->flush();
+
+                return $this->redirectToRoute('accueil');
+            }
+
+
         }
 
         return $this->render('emprunter/nouveau.html.twig', [
