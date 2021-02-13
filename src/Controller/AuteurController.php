@@ -7,6 +7,7 @@ use App\Form\AuteurType;
 use App\Repository\AuteurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,7 +41,7 @@ class AuteurController extends AbstractController
     {
         $auteur = new Auteur();
         $frm = $this->createForm(AuteurType::class, $auteur);
-        $frm->add('valider', SubmitType::class);
+        $frm->add('valider', SubmitType::class,['attr'=>['class'=>'form-group']]);
         $frm->handleRequest($request);
         $em = $this->getDoctrine()->getManager();
         if ($frm->isSubmitted() && $frm->isValid()) {

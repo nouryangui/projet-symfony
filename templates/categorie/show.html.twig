@@ -1,27 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{titre}}{% endblock %}
+{% block title %}{{ titre }}{% endblock %}
 
 {% block body %}
 
     <table class="table" border="1">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ categorie.id }}</td>
-            </tr>
-            <tr>
-                <th>Designation</th>
-                <td>{{ categorie.designation }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ categorie.description }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ categorie.id }}</td>
+        </tr>
+        <tr>
+            <th>Designation</th>
+            <td>{{ categorie.designation }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ categorie.description }}</td>
+        </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('categorie_index') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
-    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">editer</a>
+    <div class="row form-group">
+        <div class="col col-lg-2">
+            <a href="{{ path('categorie_index') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
+        </div>
+        <div class="col col-lg-2">
+            <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"><span class="btn btn-success"><i
+                            class="fa fa-pencil"></i>Editer</span></a>
+        </div>
+    </div>
 
 {% endblock %}

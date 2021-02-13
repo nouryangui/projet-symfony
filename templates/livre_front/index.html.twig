@@ -27,29 +27,34 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Portfolio</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
         <div class="row">
             {% for livre in livres %}
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" alt=""/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">{{ livre.titre }}</div>
-                        <div class="portfolio-caption-subheading text-muted">    <img  src="{{ vich_uploader_asset(livre,'imageFile') }}" >
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"  src="{{ vich_uploader_asset(livre,'imageFile') }}" alt=""/>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{ livre.titre }}</div>
+                            {% if app.user.email is defined %}
+                            <a href="{{ path('emprunter_new', {'id': livre.id,'abonne':app.user.id}) }}"><span class="btn btn-primary">Ajouter au panier <i
+                                            class="fa fa-plus"></i></span></a>
+                            {% endif %}
+                            {% if app.user.email is not  defined %}
+                                <a href="{{ path('app_login') }}"><span
+                                            class="btn btn-primary">Ajouter au panier <i
+                                                class="fa fa-plus"></i></span></a>
+                            {% endif %}
 
                         </div>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-
-    </div>
-    {% endfor %}
 </section>
 <!-- About-->
 {% include 'about.html.twig' %}

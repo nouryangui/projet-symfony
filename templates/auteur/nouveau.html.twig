@@ -3,6 +3,9 @@
 
 {% block body %}
     {{ form_start(formulaire) }}
+    {{ form_widget(formulaire) }}
+    </br></br>
+
     {{ form_end(formulaire) }}
     <a href="{{ path('index_auteur') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
 {% endblock %}

@@ -69,7 +69,6 @@
 <div id="page-wrapper">
     <div class="header">
         <h1 class="page-header">
-            Empty Page <small>Create new page.</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{ path('accueil') }}"><i class="fa fa-home"></i>Accueil</a></li>
@@ -83,7 +82,6 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <td>Advanced tables</td>
                     </div>
                     <div class="panel-body">
                         {% block body %}{% endblock %}
@@ -93,7 +91,8 @@
         </div>
     </div>
     {% endblock %}
-    {% include('piedpage.html.twig') %}
+    <!-- Footer-->
+    {% include 'footer.html.twig' %}
 
 </div>
 </div>

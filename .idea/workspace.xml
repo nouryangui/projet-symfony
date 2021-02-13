@@ -2,18 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ec30f0-c158-48ff-abd4-3aa14ffb5108" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201213200449.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201213210335.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201213223826.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201214060757.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/livres/Edge-of-eternity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/livres/téléchargement.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EditeurFrontController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/editeur_front/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/emprunter/affiche_abonne.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/front/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccueilFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LivrefrontController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil_front/categorie.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuteurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmprunterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmprunterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmprunteurController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LivreFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LivreFrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Emprunter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Emprunter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Emprunteur.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AuteurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AuteurType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategorieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategorieType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EditeurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditeurType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmprunterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmprunterType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmprunteurType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LivreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LivreType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LivreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LivreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil_front/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil_front/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livrefront/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auteur/afficher.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auteur/afficher.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auteur/nouveau.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auteur/nouveau.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorie/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editeur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editeur/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emprunter/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emprunter/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emprunter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emprunter/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emprunter/nouveau.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emprunter/nouveau.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emprunteur/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emprunteur/nouveau.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/livre_front/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livre_front/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/masthead.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/masthead.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,11 +192,14 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kFxar3WtoB2BdxkkeBImhQrwPY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/front/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Nouveau dossier/Chaima-Emna-Project" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
@@ -219,7 +261,16 @@
       <workItem from="1607554660235" duration="2634000" />
       <workItem from="1607694780327" duration="23254000" />
       <workItem from="1607812674068" duration="132000" />
-      <workItem from="1607849901234" duration="21686000" />
+      <workItem from="1607849901234" duration="23097000" />
+      <workItem from="1607882028195" duration="16813000" />
+      <workItem from="1607919885411" duration="9722000" />
+      <workItem from="1608059306172" duration="259000" />
+      <workItem from="1609523351699" duration="862000" />
+      <workItem from="1609524324455" duration="115000" />
+      <workItem from="1609535705829" duration="238000" />
+      <workItem from="1609539542592" duration="1589000" />
+      <workItem from="1612804356085" duration="161000" />
+      <workItem from="1613203673331" duration="1046000" />
     </task>
     <servers />
   </component>
@@ -238,5 +289,24 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/navigation.html.twig</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Repository/AuteurRepository.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

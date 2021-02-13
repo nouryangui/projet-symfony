@@ -58,4 +58,15 @@ class LivreRepository extends ServiceEntityRepository
             ->getQuery()
             ->execute();
     }
+    public function findByEditeurs($nomEditeur)
+    {
+
+        return $this->createQueryBuilder('l')
+            ->leftJoin('l.editeur','c')
+            ->addSelect('c')
+            ->WHERE('c.nom = :nom')
+            ->setParameter('nom', $nomEditeur)
+            ->getQuery()
+            ->execute();
+    }
 }

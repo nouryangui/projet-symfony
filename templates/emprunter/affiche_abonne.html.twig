@@ -8,20 +8,16 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Livre</th>
-            <th>Abonné</th>
-            <th>Date emprunt </th>
-            <th>Date retour</th>
+            <th>email</th>
+
         </tr>
         </thead>
         <tbody>
-        {% for c,emprunt in emprunts %}
+        {% for c,user in users %}
             <tr>
                 <td>{{ c+1 }}</td>
-                <td>{{emprunt.livre.titre  }}</td>
-                <td>{{emprunt.user.email }}</td>
-                <td>{{emprunt.dateDebut ? emprunt.dateDebut|date('d-m-Y') : ''}}</td>
-                <td>{{ emprunt.dateFin ? emprunt.dateFin|date('d-m-Y') : '' }}</td>
+                <td>{{user.email  }}</td>
+
 
             </tr>
         {% else %}

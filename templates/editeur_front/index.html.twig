@@ -16,40 +16,47 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet"/>
 
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet"/>
-
 </head>
 <body id="page-top">
 <!-- Navigation-->
 {% include 'navigation.html.twig' %}
 <!-- Masthead-->
 {% include 'masthead.html.twig' %}
-{{ form_start(form) }}
-<section>
-    <div id="container_demo">
-        <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-
-        <div id="wrapper">
-            <div id="login" class="animate form">
-                <form method="post">
-                    <h1>Emprunter livre</h1>
-                    <p>
-                        {{ form_row(form.dateDebut) }}
-                    </p>
-                    <p>
-                        {{ form_row(form.dateFin) }}
-                    <p>
-                    </p>
-                    {{ form_end(form) }}
-                    </p>
-                </form>
-                <button class="btn btn-primary btn-lg">{{ button_label|default('Save') }}</button>
-            </div>
+<!-- Portfolio Grid-->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Portfolio</h2>
         </div>
-    </div>
+        <div class="row">
+            {% for livre in livres %}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{ vich_uploader_asset(livre,'imageFile') }}" alt=""/>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{ livre.titre }}</div>
+                            {% if app.user.email is defined %}
+                                <a href="{{ path('emprunter_new', {'id': livre.id,'abonne':app.user.id}) }}"><span
+                                            class="btn btn-primary">Ajouter au panier <i
+                                                class="fa fa-plus"></i></span></a>
+                            {% endif %}
+                            {% if app.user.email is not  defined %}
+                                <a href="{{ path('app_login') }}"><span
+                                            class="btn btn-primary">Ajouter au panier <i
+                                                class="fa fa-plus"></i></span></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 </section>
-<!-- Services-->
-
+<!-- About-->
 {% include 'about.html.twig' %}
 
 

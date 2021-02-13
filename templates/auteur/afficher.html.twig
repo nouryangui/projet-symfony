@@ -3,25 +3,47 @@
     <tbody>
     <div class="container">
         <div class="row">
-            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
-                {{ auteur.prenom }}</br>
+            <div class="col col-lg-3 col-sm-6">
+                <b>Nom</b>
             </div>
-            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
+            <div class="col col-lg-3 col-sm-6">
+                {{ auteur.nom }}</br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-sm-6">
+                <b>Prenom</b>
+            </div>
+            <div class="col col-lg-3 col-sm-6">
                 {{ auteur.nom }}<br>
             </div>
-            <div class="col col-xs-12 col-lg-9 col-md-8 col-sm-6">
-                {{ auteur.biographie }}<br>
-            </div>
-            <tr>
-                <th>Livres</th>
-                <td>{% for livre in auteur.livres %}
-                        {{ livre.titre }}
-                    {% endfor %}
-                </td>
-            </tr>
         </div>
-    </div>
-    <a href="{{ path('index_auteur') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
-
+        <div class="row">
+            <div class="col col-lg-3 col-sm-6">
+                <b>Biographie</b>
+            </div>
+            <div class="col col-lg-3 col-sm-6">
+                    {{ auteur.biographie }}<br>
+                </div>
+        </div>
+        <div class="row">
+                <tr>
+                    <div class="col col-lg-3 col-sm-6">
+                        <b>Livres</b>
+                    </div>
+                    <td>{% for livre in auteur.livres %}
+                            {{ livre.titre }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </div>
+        </div>
+    </br></br>
+    <div class="row form-group">
+        <div class="col col-lg-2">
+            <a href="{{ path('index_auteur') }}"><span class="btn btn-primary"><i class="fa fa-backward"></i></span></a>
+        </div>
+        <div class="col col-lg-2"><a href="{{ path('edit_auteur', {'id': auteur.id}) }}"><span class="btn btn-success" ><i
+                            class="fa fa-pencil"></i>Editer</span></a></div>
     </tbody>
 {% endblock %}
